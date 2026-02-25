@@ -1,0 +1,202 @@
+/*
+    Task F: Creative UX
+    Color scheme:
+    #F1ECEA     
+    #797C86 
+    #857D88
+    #786F7B 
+    #2A2939  
+    Colours Scheme From: http://colormind.io/bootstrap/
+*/
+
+/* Sets the base font, removes default margin, and adds background / text colours across the page */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #2A2939;
+    color: #F1ECEA;
+}
+
+/* Centers the content and limits it to 900px */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 18px;
+}
+
+/* Styles each screen section */
+.card {
+    background: #797C86;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+/* Makes labels appear on their own line in bold */
+label {
+    display: block;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Styles text inputs and dropdowns */
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: #2A2939;
+    color: #F1ECEA;
+    box-sizing: border-box;
+}
+
+/* Shows an outline when the user clicks on the input or dropdown */
+input:focus,
+select:focus {
+    outline: 2px solid #F1ECEA;
+}
+
+/* Adds base padding, rounded corners, bold text, and pointer cursor to all buttons */
+button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Styles the primary action button */
+button.primary {
+    background: #2A2939;
+    color: #F1ECEA;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Changes the primary button colour when hovered */
+button.primary:hover {
+    background: #786F7B;
+}
+
+/* Styles the secondary button */
+button.secondary {
+    background: #2A2939;
+    color: #F1ECEA;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Changes the secondary button colour when hovered */
+button.secondary:hover {
+    background: #786F7B;
+}
+
+/* Dims and disables pointer interaction on buttons that are not currently usable */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Lays out form fields side by side in two-columns */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    overflow: hidden;
+}
+
+/* Prevents grid children from exceeding their column width and clipping content */
+.row > div {
+    min-width: 0;
+}
+
+/* Stacks the two columns into one on small screens below 720px */
+@media (max-width: 720px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Validation error messages */
+.err {
+    color: #2A2939;
+    min-height: 18px;
+    font-size: 0.9rem;
+}
+
+/* Styles the chapter label in the header as a small rounded badge */
+.pill {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #F1ECEA;
+    background: #2A2939;
+}
+
+/* Completely removes an element from the page layout when the hidden class is applied */
+.hidden {
+    display: none !important;
+}
+
+/* Styles informational boxes such as the goal description and best score display */
+.notice {
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #2A2939;
+    color: #F1ECEA;
+}
+
+/* Arranges the answer choice buttons in a vertical stack */
+.choices {
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Styles each answer choice as a full-width button with left-aligned bold text */
+.choiceBtn {
+    text-align: left;
+    width: 100%;
+    background: #2A2939;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    color: #F1ECEA;
+    font-weight: 700;
+}
+
+/* Adds highlight to button when hovered */
+.choiceBtn:hover {
+    background: #786F7B;
+    border-color: rgba(255, 255, 255, 0.40);
+}
+
+/* Aligns header and footer rows with space between items */
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Task F: Brand / Logo */
+/* Aligns the logo image and app title side by side in the header */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Sizes the logo image to a consistent square and rounds its corners slightly */
+.logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Removes the default browser margin applied to figure elements */
+figure {
+    margin: 0;
+}
