@@ -1,16 +1,27 @@
 /*
 Short Answer Questions:
 Q1: Why do we need async/await when using fetch()?
-
+    fetch() sends a request to retrieve data, but must wait for it to complete. 
+    Marking a function with async means it contains asynchronous code, code that runs in the background. 
+    Using await pauses the function until the data arrives. How it all works together: 
+    fetch() makes the request, async marks the function,  and await waits for the response before continuing.
 
 Q2: What does OpenTDB response_code mean?
-
+    In OpenTDB the response_code is used to tell us whether a request succeeded or not. In our case Code 0 (Success)
+    means the API found enough questions to use, and Code 5 (Rate Limit) means there were too many requests made, throwing an error.
 
 Q3: What is stored under STORAGE_KEY and why JSON?
-
+    localStorage is stored under STORAGE_KEY and is used to store data. This data includes: bestScore (the highest number of correct answers), 
+    bestTotal (the number of questions in that best round), and attempts (the total number of rounds the player has played). 
+    localStorage only accepts strings, so JSON is needed. JSON.stringify() converts the object to a string before saving, and JSON.parse() converts it back to an object when we read it.
 
 Q4: What happens from clicking Start Quiz to the first question?
-
+    When clicking "Start Quiz" it runs the btnStart click handler, which calls runRoundFlow(). 
+    That function first calls validateStartForm() — if invalid (the name or email), it returns early. 
+    If valid, startFromForm() copies the inputs into state, then sets ROUND.difficulty from state.player.mode. 
+    beginRound() resets the score and index, showOnly() switches to the quiz screen, and setLoading(true) shows the loading box. 
+    getToken() is awaited to get a session token from OpenTDB, then fetchQuestions(ROUND) waits to retrieve the questions array. 
+    The raw data is normalized into a state.questions, setLoading(false) hides the loader, and finally renderQuestion() displays the first question.
 */
 
 (function () {
